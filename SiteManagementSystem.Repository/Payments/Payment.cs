@@ -1,4 +1,5 @@
 ﻿using SiteManagementSystem.Repository.Apartments;
+using SiteManagementSystem.Repository.Bills;
 using SiteManagementSystem.Repository.Users;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,10 @@ namespace SiteManagementSystem.Repository.Payments
         // Navigation properties
         public Apartment Apartment { get; set; }
         public User User { get; set; }
+        public  Bill Bill { get; set; }
 
-        public Payment(int ıd, string paymentMethod, DateTime paymentDate, string paymentType, decimal amount, int year, int month, int apartmentId, int userId, Apartment apartment, User user)
+        public Payment(string paymentMethod, DateTime paymentDate, string paymentType, decimal amount, int year, int month, int apartmentId, int userId, Apartment apartment, User user, Bill bill)
         {
-            Id = ıd;
             PaymentMethod = paymentMethod;
             PaymentDate = paymentDate;
             PaymentType = paymentType;
@@ -36,6 +37,7 @@ namespace SiteManagementSystem.Repository.Payments
             UserId = userId;
             Apartment = apartment;
             User = user;
+            Bill = bill;
         }
     }
 }

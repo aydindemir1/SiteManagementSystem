@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SiteManagementSystem.Repository.Payments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,11 @@ namespace SiteManagementSystem.Repository.Users
         public string NationalId { get; set; } // TCNo
         public string Email { get; set; }
         public string Phone { get; set; }
+        
 
         public string UserType { get; set; } // "Admin" or "Resident"
 
+        public virtual ICollection<Payment> Payments { get; set; }
         public User(int ıd, string fullName, string nationalId, string email, string phone, string userType)
         {
             Id = ıd;
