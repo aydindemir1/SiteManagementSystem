@@ -15,6 +15,8 @@ namespace SiteManagementSystem.Repository.Apartments
         public int ApartmentNumber { get; set; }
         public string OwnerOrTenant { get; set; }
 
+
+
         public Apartment(int ıd, string block, string status, string type, int floor, int apartmentNumber, string ownerOrTenant)
         {
             Id = ıd;
@@ -26,7 +28,9 @@ namespace SiteManagementSystem.Repository.Apartments
             OwnerOrTenant = ownerOrTenant;
         }
 
-       
+        public Apartment()
+        {
+        }
     }
 
 }

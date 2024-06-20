@@ -42,7 +42,23 @@ namespace SiteManagementSystem.Repository
 
             base.OnModelCreating(modelBuilder);
 
-          
+            modelBuilder.Entity<Bill>()
+            .HasOne(b => b.Payment)
+            .WithOne(p => p.Bill)
+            .HasForeignKey<Payment>(p => p.Id); // Payment tablosundaki Id, Bill tablosundaki Id ile eşleşiyor
+
+            // Diğer yapılandırmalar
+            //modelBuilder.Entity<Payment>()
+            //    .HasOne(p => p.Apartment)
+            //    .WithMany(a => a.Payment)
+            //    .HasForeignKey(p => p.ApartmentId);
+
+            modelBuilder.Entity<Payment>()
+                .HasOne(p => p.User)
+                .WithMany(u => u.Payments)
+                .HasForeignKey(p => p.UserId);
+
+
         }
     }
 }

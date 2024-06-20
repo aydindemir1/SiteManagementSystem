@@ -19,6 +19,11 @@ namespace SiteManagementSystem.Repository.Users
         public string UserType { get; set; } // "Admin" or "Resident"
 
         public virtual ICollection<Payment> Payments { get; set; }
+
+        public User()
+        {
+        }
+
         public User(int ıd, string fullName, string nationalId, string email, string phone, string userType)
         {
             Id = ıd;

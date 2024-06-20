@@ -17,6 +17,10 @@ namespace SiteManagementSystem.Repository.Bills
 
         public  Payment? Payment { get; set; }
 
+        public Bill()
+        {
+        }
+
         public Bill(int ıd, int apartmentId, decimal amount, string type, DateTime dueDate, bool ısPaid)
         {
             Id = ıd;

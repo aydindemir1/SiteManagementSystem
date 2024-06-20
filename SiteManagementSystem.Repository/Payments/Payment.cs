@@ -25,6 +25,10 @@ namespace SiteManagementSystem.Repository.Payments
         public User User { get; set; }
         public  Bill Bill { get; set; }
 
+        public Payment()
+        {
+        }
+
         public Payment(string paymentMethod, DateTime paymentDate, string paymentType, decimal amount, int year, int month, int apartmentId, int userId, Apartment apartment, User user, Bill bill)
         {
             PaymentMethod = paymentMethod;
