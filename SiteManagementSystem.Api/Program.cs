@@ -4,6 +4,7 @@ using SiteManagementSystem.Api.Filters;
 using SiteManagementSystem.Repository;
 using SiteManagementSystem.Service;
 using SiteManagementSystem.Service.Apartments.Configurations;
+using SiteManagementSystem.Service.Bills.Configurations;
 using SiteManagementSystem.Service.Users.Configurations;
 using System;
 
@@ -32,6 +33,8 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddApartmentService();
 
 builder.Services.AddUserService();
+
+builder.Services.AddBillService();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 

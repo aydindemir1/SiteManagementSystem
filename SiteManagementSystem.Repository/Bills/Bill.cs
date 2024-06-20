@@ -13,7 +13,7 @@ namespace SiteManagementSystem.Repository.Bills
         public decimal Amount { get; set; }
         public string Type { get; set; } // "Electricity", "Water", "Gas", "Maintenance"
         public DateTime DueDate { get; set; }
-        public bool IsPaid { get; set; }
+        public string IsPaid { get; set; }
 
         public  Payment? Payment { get; set; }
 
@@ -21,7 +21,7 @@ namespace SiteManagementSystem.Repository.Bills
         {
         }
 
-        public Bill(int ıd, int apartmentId, decimal amount, string type, DateTime dueDate, bool ısPaid)
+        public Bill(int ıd, int apartmentId, decimal amount, string type, DateTime dueDate, string ısPaid)
         {
             Id = ıd;
             ApartmentId = apartmentId;
