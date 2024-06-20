@@ -4,6 +4,7 @@ using SiteManagementSystem.Api.Filters;
 using SiteManagementSystem.Repository;
 using SiteManagementSystem.Service;
 using SiteManagementSystem.Service.Apartments.Configurations;
+using SiteManagementSystem.Service.Users.Configurations;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,6 +30,8 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddApartmentService();
+
+builder.Services.AddUserService();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
